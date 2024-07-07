@@ -5,8 +5,7 @@ import meter4 from "../assets/img/react.png";
 import meter5 from "../assets/img/figma.png";
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import arrow1 from "../assets/img/arrow1.svg";
-import arrow2 from "../assets/img/arrow2.svg";
+
 import colorSharp from "../assets/img/color-sharp.png"
 
 export const Skills = () => {

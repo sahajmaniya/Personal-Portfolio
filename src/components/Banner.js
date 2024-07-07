@@ -1,10 +1,9 @@
 import { useState, useEffect } from "react";
-import { Container, Row, Col, Modal, Button } from "react-bootstrap";
+import { Container, Row, Col} from "react-bootstrap";
 import headerImg from "../assets/img/profile-img.jpeg";
 import { ArrowRightCircle } from 'react-bootstrap-icons';
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
-import myresume from "../assets/Sahaj_Maniya_Resume.pdf";
 
 export const Banner = () => {
   const [loopNum, setLoopNum] = useState(0);
@@ -16,8 +15,7 @@ export const Banner = () => {
   const period = 1500;
   const [show, setShow] = useState(false);
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+
 
   useEffect(() => {
     let ticker = setInterval(() => {

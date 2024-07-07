@@ -1,6 +1,5 @@
 import * as React from "react";
 import AspectRatio from "@mui/joy/AspectRatio";
-import Link from "@mui/joy/Link";
 import Card from "@mui/joy/Card";
 import CardContent from "@mui/joy/CardContent";
 import Chip from "@mui/joy/Chip";
@@ -11,7 +10,6 @@ import hackimg3 from "../assets/img/hackathon.jpg";
 import hackimg4 from "../assets/img/cvmuhackathon.png";
 import hackimg5 from "../assets/img/codeunnatimarathon.png";
 import calendarimg from "../assets/img/calander.png";
-import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
 const cardData = [

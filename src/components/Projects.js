@@ -1,7 +1,6 @@
 import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
 import { ProjectCard } from "./ProjectCard";
 import { UiProjectCard } from "./ProjectCard";
-import Experience from "./experience";
 import projImg1 from "../assets/img/campusbites.png";
 import projImg2 from "../assets/img/agroplus.png";
 import projImg3 from "../assets/img/newsapp.png";
