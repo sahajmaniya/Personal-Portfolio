@@ -4,7 +4,6 @@ const cors = require("cors");
 const nodemailer = require("nodemailer");
 const dotenv = require("dotenv");
 
-// Load environment variables from .env file
 dotenv.config();
 
 // Server used to send emails
