@@ -36,7 +36,15 @@ body {
   background-color: #121212 !important;
   color: #fff !important;
   font-family: 'Centra', sans-serif !important;
+  overflow: -moz-scrollbars-none;
+  -ms-overflow-style: none;
 }
+
+body::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
 
 h1,
 h2,
@@ -273,25 +281,26 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 
 
-@media (max-width:464px){
+@media (max-width:464px) {
   nav.navbar a.navbar-brand {
     width: 15%;
   }
-  
-  .navbar-text button{
-  padding: 8px 25px;
+
+  .navbar-text button {
+    padding: 8px 25px;
 
   }
-  .navlinks{
+
+  .navlinks {
     display: flex;
     flex-direction: row;
 
   }
 
-  .logo-img img{
+  .logo-img img {
     margin-left: 20px;
   }
-  
+
 }
 
 
@@ -304,7 +313,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   background-position: top center;
   background-size: cover;
   background-repeat: no-repeat;
-  
+
 }
 
 .banner .tagline {
@@ -364,6 +373,9 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 
 @media (max-width: 464px) {
+  .banner{
+    background-position-x:30%;
+  }
   .banner img {
     margin-top: 30px;
     width: 80%;
@@ -380,15 +392,16 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   .banner button {
     margin-left: 25%;
   }
-  .banner h1{
+
+  .banner h1 {
     font-size: 35px;
     display: flex;
     flex-direction: column;
     line-height: 1.2;
-   
+
   }
 
-  
+
 }
 
 @keyframes updown {
@@ -724,19 +737,21 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   width: 100%;
 }
 
-@media (max-width:464px){
+@media (max-width:464px) {
 
-  
-  .contact input{
+
+  .contact input {
     max-width: 100%;
     margin-bottom: 10px;
- 
-  } 
-   .contact textarea{
+
+  }
+
+  .contact textarea {
     max-width: 100%;
     margin-left: 5%;
   }
-  .contact form{
+
+  .contact form {
     width: 90%;
     display: flex;
     flex-direction: column;
@@ -744,12 +759,14 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     align-items: center;
     margin-left: 5%;
   }
-.contact h2{
-  margin: 20px ; 
-}
-.contact button{
-  margin-left: 10%;
-}
+
+  .contact h2 {
+    margin: 20px;
+  }
+
+  .contact button {
+    margin-left: 10%;
+  }
 }
 
 
@@ -922,7 +939,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   }
 }
 
-.marquee {
+/* .marquee {
   overflow: hidden;
   white-space: nowrap;
   display: flex;
@@ -931,14 +948,13 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   margin-top: 30px;
 
   width: 100vw;
-  /* Ensure the marquee spans the full viewport width */
   box-sizing: border-box;
 }
 
 .marquee-content {
   display: flex;
   animation: marquee 35s linear infinite;
-}
+} */
 
 .hack-container::before,
 .hack-container::after {
@@ -1010,16 +1026,18 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 @media (max-width:464px) {
 
-  .footer{
+  .footer {
     background-position: 90%;
-    
+
   }
-  .sahaj-logo{
+
+  .sahaj-logo {
     width: 40%;
     margin-left: 35%;
-    margin-bottom:30px ;
+    margin-bottom: 30px;
   }
-  .social-icon{
+
+  .social-icon {
     margin: 10 0 10 0;
   }
 }
