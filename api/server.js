@@ -25,7 +25,7 @@ contactEmail.verify((error) => {
   }
 });
 
-app.post( (req, res) => {
+app.post("/api/contact", (req, res) => {
   const name = req.body.firstName + " " + req.body.lastName;
   const email = req.body.email;
   const message = req.body.message;
@@ -41,9 +41,11 @@ app.post( (req, res) => {
   };
   contactEmail.sendMail(mail, (error) => {
     if (error) {
-      res.json(error);
+      console.error('Error sending email:', error);
+      res.status(500).json({ code: 500, status: "Failed to send message" });
     } else {
-      res.json({ code: 200, status: "Message Sent" });
+      console.log('Email sent successfully');
+      res.status(200).json({ code: 200, status: "Message Sent" });
     }
   });
 });

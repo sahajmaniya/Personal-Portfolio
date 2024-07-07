@@ -6,8 +6,6 @@ import TrackVisibility from 'react-on-screen';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-
-
 export const Contact = () => {
   const formInitialDetails = {
     firstName: '',
@@ -30,37 +28,40 @@ export const Contact = () => {
     e.preventDefault();
     setButtonText('Sending...');
     try {
-      let response = await fetch('https://sahaj-maniya-portfolio.vercel.app', {
+      let response = await fetch('https://your-project-name.vercel.app/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json;charset=utf-8'
         },
         body: JSON.stringify(formDetails)
       });
-      let result = await response.json();
-      if (result.code === 200) {
+      
+      const result = await response.text(); // Get raw response as text
+      console.log('Raw response:', result);
+      
+      let jsonResult;
+      try {
+        jsonResult = JSON.parse(result); // Attempt to parse JSON
+      } catch (error) {
+        console.error('Error parsing JSON:', error);
+        throw new Error('Invalid JSON response');
+      }
+
+      if (jsonResult.code === 200) {
         toast.success('Message sent successfully', {
           position: "top-center",
-        style:{
-        maxWidth:"300px"
-        }
-
+          style: { maxWidth: "300px" }
         });
       } else {
         toast.error('Something went wrong, please try again later.', {
           position: "top-center",
-          style:{
-              
-            }
-
+          style: {}
         });
       }
     } catch (error) {
       console.error('Error:', error);
       toast.error('Something went wrong, please try again later.', {
         position: "top-center"
-
-
       });
     } finally {
       setButtonText('Send');
@@ -116,10 +117,10 @@ export const Contact = () => {
                       </Col>
                       <Col size={12} sm={6} className='px-1'>
                         <input
-                        maxLength="10"
                           type='tel'
                           value={formDetails.phone}
                           placeholder='Phone No.'
+                          maxLength="10"
                           onChange={(e) => onFormUpdate('phone', e.target.value)}
                         />
                       </Col>
@@ -141,8 +142,7 @@ export const Contact = () => {
             </TrackVisibility>
           </Col>
         </Row>
-      <ToastContainer/>
-
+        <ToastContainer />
       </Container>
     </section>
   );
