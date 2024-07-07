@@ -943,7 +943,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   white-space: nowrap;
   display: flex;
   align-items: center;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   margin-top: 30px;
   scrollbar-width: none; /* Firefox */
 overflow-x: scroll;
