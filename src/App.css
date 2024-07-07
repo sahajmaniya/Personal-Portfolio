@@ -887,8 +887,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   background-color: black;
   margin: auto;
   padding: 20px;
-  overflow: hidden;
-  position: relative;
+  position: relative; 
 }
 
 .hack-text {
@@ -939,7 +938,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   }
 }
 
-/* .marquee {
+.marquee {
   overflow: hidden;
   white-space: nowrap;
   display: flex;
@@ -953,8 +952,8 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 .marquee-content {
   display: flex;
-  animation: marquee 35s linear infinite;
-} */
+  /* animation: marquee 35s linear infinite;   */
+}
 
 .hack-container::before,
 .hack-container::after {
@@ -1042,9 +1041,3 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   }
 }
 
-@media (max-width: 464px) {
-  .toast {
-    font-size: 14px;
-    margin: 8px;
-  }
-}

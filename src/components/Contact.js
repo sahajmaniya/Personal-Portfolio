@@ -138,8 +138,9 @@ export const Contact = () => {
             </TrackVisibility>
           </Col>
         </Row>
+      <ToastContainer/>
+
       </Container>
-      <ToastContainer className="toast" />
     </section>
   );
 };

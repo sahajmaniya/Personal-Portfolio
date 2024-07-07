@@ -61,7 +61,7 @@ export const Banner = () => {
               {({ isVisible }) =>
               <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
                 <span className="tagline">Welcome to my Portfolio</span>
-                <h1 className="headline-text">Hi! I'm <span className="person-name"> Sahaj Maniya</span> <span className="txt-rotate role" dataPeriod="1000" data-rotate='[ "FrontEnd Developer", "Web Designer", "UI/UX Designer" ]'><span className="wrap">{text}</span></span></h1>
+                <h1 className="headline-text">Hi! I'm <span className="person-name"> Sahaj Maniya</span> <span className="txt-rotate role" data-period="1000" data-rotate='[ "FrontEnd Developer", "Web Designer", "UI/UX Designer" ]'><span className="wrap">{text}</span></span></h1>
                 <p>I specialize in Frontend Development and UI/UX Design. 
                 Passionate about creating captivating digital experiences, I bring together technical proficiency with creative flair to deliver intuitive solutions. Let's connect and explore opportunities to collaborate.</p>
                <a target="_blank" href="https://drive.google.com/file/d/1SdzMSZef0UxroY_7UfiGQVeECAQlL4-p/view?usp=sharing"  style={{textDecoration:"none"}} > <button >My Resume<ArrowRightCircle size={25} /></button></a>

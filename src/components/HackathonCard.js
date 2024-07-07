@@ -147,15 +147,11 @@ export default function HackathonCardList() {
   };
   return (
     <>
-      <Carousel
-        responsive={responsive}
-        infinite={true}
-        className="owl-carousel owl-theme skill-slider"
-      >
+      
         {cardData.map((card) => (
           <HackathonCard key={card.id} data={card} />
         ))}
-      </Carousel>
+    
     </>
   );
 }
