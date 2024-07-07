@@ -28,7 +28,7 @@ export const Contact = () => {
     e.preventDefault();
     setButtonText('Sending...');
     try {
-      let response = await fetch('https://sahaj-maniya-portfolio.vercel.app/api/server', {
+      let response = await fetch('https://sahaj-maniya-portfolio.vercel.app/src/components/Contact.js', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json;charset=utf-8'
