@@ -116,6 +116,7 @@ export const Contact = () => {
                       </Col>
                       <Col size={12} sm={6} className='px-1'>
                         <input
+                        maxLength="10"
                           type='tel'
                           value={formDetails.phone}
                           placeholder='Phone No.'
