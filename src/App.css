@@ -939,15 +939,17 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 
 .marquee {
-  overflow: hidden;
+  overflow: ;
   white-space: nowrap;
   display: flex;
   align-items: center;
   margin-bottom: 50px;
   margin-top: 30px;
-
+  scrollbar-width: none; /* Firefox */
+overflow-x: scroll;
   width: 100vw;
   box-sizing: border-box;
+  padding: 0 20px 0 20px;
 }
 
 .marquee-content {
