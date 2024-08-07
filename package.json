@@ -8,9 +8,12 @@
     "@emotion/styled": "^11.11.5",
     "@mui/joy": "^5.0.0-beta.36",
     "@mui/material": "^5.16.0",
+    "@react-three/drei": "^9.108.4",
+    "@react-three/fiber": "^8.16.8",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
+    "@vercel/node": "^1.8.0",
     "animate.css": "^4.1.1",
     "bootstrap": "^5.3.3",
     "clsx": "^2.1.1",
@@ -36,8 +39,8 @@
     "styled-components": "^6.1.11",
     "tailwind-merge": "^2.3.0",
     "tailwindcss": "^3.4.4",
-    "web-vitals": "^2.1.4",
-      "@vercel/node": "^1.8.0"
+    "three": "^0.166.1",
+    "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -64,18 +67,20 @@
     ]
   },
   "content_scripts": [
-  {
-    "matches": ["<all_urls>"],
-    "js": ["contentScript.bundle.js"]
-  }
-],
-"permissions": [
-  "tabs",
-  "storage",
-  "activeTab",
-  "https://*/",
-  "http://*/"
-]
-
-
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "contentScript.bundle.js"
+      ]
+    }
+  ],
+  "permissions": [
+    "tabs",
+    "storage",
+    "activeTab",
+    "https://*/",
+    "http://*/"
+  ]
 }
