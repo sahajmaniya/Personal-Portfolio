@@ -12,11 +12,14 @@ import projImg8 from "../assets/img/foodapp.png";
 import projImg9 from "../assets/img/antidrone.png";
 import projImg10 from "../assets/img/amazonclone.png";
 import projImg11 from "../assets/img/netflixclone.png";
+import projImg12 from "../assets/img/appleiphone.png";
 
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
 import ExperienceSection from "./ExperienceSection";
+
+
 
 export const Projects = () => {
 
@@ -32,6 +35,12 @@ export const Projects = () => {
       description: "Frontend Development",
       imgUrl: projImg2,
       projectLink:"https://github.com/sahajmaniya/agroplus"
+    },
+    {
+    title: "Apple Iphone",
+    description: "Frontend Development",
+    imgUrl: projImg12,
+    projectLink:"https://apple-iphone-gules.vercel.app/"
     },
     {
       title: "NewsApp",
@@ -56,6 +65,9 @@ export const Projects = () => {
       description: "Frontend Development",
       imgUrl: projImg11,
       projectLink:"https://github.com/sahajmaniya/Bharat-Intern/tree/main/Netflix%20clone"
+
+     
+    
     },
     
   ];
