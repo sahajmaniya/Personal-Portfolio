@@ -25,7 +25,7 @@ contactEmail.verify((error) => {
   }
 });
 
-app.post("/Contact", (req, res) => {
+app.post("/contact", (req, res) => {
   const name = req.body.firstName + " " + req.body.lastName;
   const email = req.body.email;
   const message = req.body.message;
@@ -50,7 +50,7 @@ app.post("/Contact", (req, res) => {
   });
 });
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.BACKEND_PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
