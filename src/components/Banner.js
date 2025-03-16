@@ -62,7 +62,7 @@ export const Banner = () => {
                 <h1 className="headline-text">Hi! I'm <span className="person-name"> Sahaj Maniya</span> <span className="txt-rotate role" data-period="1000" data-rotate='[ "FrontEnd Developer", "Web Designer", "UI/UX Designer" ]'><span className="wrap">{text}</span></span></h1>
                 <p>I specialize in Frontend Development and UI/UX Design. 
                 Passionate about creating captivating digital experiences, I bring together technical proficiency with creative flair to deliver intuitive solutions. Let's connect and explore opportunities to collaborate.</p>
-               <a target="_blank" href="https://drive.google.com/file/d/1GquOGNr5P00trgAUhf7naEw_hSsKW7bW/view?usp=drive_link"  style={{textDecoration:"none"}} > <button >My Resume<ArrowRightCircle size={25} /></button></a>
+               <a target="_blank" href="https://drive.google.com/file/d/1_Wn1zGullIugovWRf5eytfzqg-Ni6sEY/view?usp=sharing"  style={{textDecoration:"none"}} > <button >My Resume<ArrowRightCircle size={25} /></button></a>
               </div>} 
             </TrackVisibility>
           </Col>
