@@ -953,7 +953,7 @@ overflow-x: scroll;
 
 .marquee-content {
   display: flex;
-  /* animation: marquee 35s linear infinite;   */
+  /* animation: marquee 35s linear infinite;   */ 
 }
 
 .hack-container::before,
