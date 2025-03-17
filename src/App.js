@@ -20,6 +20,7 @@ function App() {
       <HackathonSection/>
       <Contact/>
       <Footer/>
+      <SpeedInsights/>
     </div>
   );
 }
