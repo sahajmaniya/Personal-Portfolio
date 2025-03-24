@@ -8,11 +8,16 @@ import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 import HackathonSection from './components/HackathonSection';
 import { SpeedInsights } from "@vercel/speed-insights/react"
+import { HelmetProvider } from "react-helmet-async";
+import SEO from './components/SEO';
+
 
 
 function App() {
   return (
+    <HelmetProvider>
     <div className="App">
+    <SEO/>
       <NavBar />
       <Banner />
       <Skills />
@@ -20,8 +25,9 @@ function App() {
       <HackathonSection/>
       <Contact/>
       <Footer/>
-      <SpeedInsights/>
+      <SpeedInsights/>  
     </div>
+    </HelmetProvider>
   );
 }
 
