@@ -1,4 +1,7 @@
 import * as React from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import AspectRatio from "@mui/joy/AspectRatio";
 import Card from "@mui/joy/Card";
 import CardContent from "@mui/joy/CardContent";
@@ -10,7 +13,6 @@ import hackimg3 from "../assets/img/hackathon.jpg";
 import hackimg4 from "../assets/img/cvmuhackathon.png";
 import hackimg5 from "../assets/img/codeunnatimarathon.png";
 import calendarimg from "../assets/img/calander.png";
-import "react-multi-carousel/lib/styles.css";
 
 const cardData = [
   {
@@ -71,7 +73,7 @@ function HackathonCard({ data }) {
         backgroundColor: "black",
         borderRadius: 10,
         width: 320,
-        marginRight: 2,
+        margin: "0 10px",
       }}
     >
       <AspectRatio ratio="1" sx={{ width: 90, my: 1 }}>
@@ -108,7 +110,7 @@ function HackathonCard({ data }) {
           <img className="calendarimg" src={calendarimg} alt="calendar" />
           {data.time}
         </Typography>
-        <a target="_blank" href={data.hackathonlink}>
+        <a target="_blank" href={data.hackathonlink} rel="noreferrer">
           <Chip
             variant="soft"
             color="primary"
@@ -123,33 +125,45 @@ function HackathonCard({ data }) {
   );
 }
 
-export default function HackathonCardList() {
-  const responsive = {
-    superLargeDesktop: {
-      // the naming can be any, depends on you.
-      breakpoint: { max: 4000, min: 3000 },
-      items: 5,
-    },
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 3,
-    },
-    tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: 2,
-    },
-    mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 1,
-    },
+
+
+export default function HackathonCardSlider() {
+  const settings = {
+    dots: false,
+    arrows:false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
   };
+
   return (
-    <>
-      
+    <div style={{ width: "90%", margin: "0 auto" }}>
+      <Slider {...settings}>
         {cardData.map((card) => (
-          <HackathonCard key={card.id} data={card} />
+          <div key={card.id}>
+            <HackathonCard data={card} />
+          </div>
         ))}
-    
-    </>
+      </Slider>
+    </div>
   );
 }

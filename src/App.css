@@ -953,7 +953,7 @@ overflow-x: scroll;
 
 .marquee-content {
   display: flex;
-  /* animation: marquee 35s linear infinite;   */ 
+  animation: marquee 35s linear infinite;   
 }
 
 .hack-container::before,
@@ -1042,3 +1042,44 @@ overflow-x: scroll;
   }
 }
 
+.hack-container {
+  padding: 60px 0;
+  background-color: black;
+}
+
+.hack-text {
+  background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
+  padding: 20px 0;
+  text-align: center;
+  width: 300px;
+  border-radius: 20px;
+  margin: 0 auto 40px;
+  font-size: 28px;
+}
+
+/* Slick Slider Custom Styles */
+.slick-slider {
+  margin: 0 auto;
+}
+
+.slick-list {
+  padding: 20px 0;
+}
+
+.slick-slide > div {
+  padding: 0 10px;
+  display: flex;
+  justify-content: center;
+}
+
+
+@media (max-width: 464px) {
+  .hack-text {
+    width: 80%;
+    font-size: 24px;
+  }
+  
+  .slick-slide > div {
+    padding: 0 5px;
+  }
+}
