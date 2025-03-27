@@ -2,6 +2,8 @@ import * as React from "react";
 import ExperienceCard from "./experience";
 import companayimg1 from "../assets/img/bharatintern.png";
 import companayimg2 from "../assets/img/codeinfosys.png";
+import companayimg3 from "../assets/img/NTS-Logo.png";
+
 
 
 
@@ -17,9 +19,13 @@ const experiences = [
         companyImage: companayimg2  ,
         role: "Frontend Developer Intern",
         companyName: "Code Infosys",
-        jobDuration:"May 2024 - June 2024",
-
-        
+        jobDuration:"May 2024 - June 2024",   
+    },
+    {
+        companyImage: companayimg3  ,
+        role: "Frontend Developer",
+        companyName: "Nanditech Solutions",
+        jobDuration:"Jan 2025 - Present",   
     },
 
 ];

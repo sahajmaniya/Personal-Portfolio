@@ -13,6 +13,10 @@ import projImg9 from "../assets/img/antidrone.png";
 import projImg10 from "../assets/img/amazonclone.png";
 import projImg11 from "../assets/img/netflixclone.png";
 import projImg12 from "../assets/img/appleiphone.png";
+import projImg13 from "../assets/img/tempconvertor.png";
+import projImg14 from "../assets/img/spotifyclone.png";
+
+
 
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import 'animate.css';
@@ -58,17 +62,28 @@ export const Projects = () => {
       title: "Amazone Clone",
       description: "Frontend Development",
       imgUrl: projImg10,
-      projectLink:"https://github.com/sahajmaniya/AmazonClone"
+      projectLink:"https://amazon-clone-sable-rho.vercel.app/"
     },
     {
       title: "Netflix Clone",
       description: "Frontend Development",
       imgUrl: projImg11,
-      projectLink:"https://github.com/sahajmaniya/Bharat-Intern/tree/main/Netflix%20clone"
+      projectLink:"https://nteflix-clone.vercel.app/"
 
-     
-    
     },
+    {
+      title: "Temperature Convertor",
+      description: "Frontend Development",
+      imgUrl: projImg13,
+      projectLink:"https://temperature-convertor-iota.vercel.app/"
+    },
+    {
+      title: "Spotify Clone",
+      description: "Frontend Development",
+      imgUrl: projImg14,
+      projectLink:"https://spotify-clone-one-tau-73.vercel.app/"
+    },
+    
     
   ];
   const uiprojects = [

@@ -4,13 +4,24 @@ import reactpng from "../assets/img/figmalogo.png";
 import livedemoimg from "../assets/img/livedemo.png";
 
 function ProjectCard({ title, description, imgUrl,projectLink })  {
-const specificGithubImg = title === "Apple Iphone" ? livedemoimg : githubimg;
+  let specificGithubImg;
+  switch(title) {
+    case "Apple Iphone":
+    case "Amazone Clone":
+    case "Netflix Clone":
+    case "Temperature Convertor":
+    case "Spotify Clone":
+      specificGithubImg = livedemoimg;
+      break;
+    default:
+      specificGithubImg = githubimg;
+  }
 
   return (
     <Col size={12} sm={6} md={4}>
       <div className="proj-imgbx">
       
-        <img src={imgUrl} style={{maxHeight:"240px", objectFit:"cover"}}/>
+        <img className="project-img" src={imgUrl}/>
       
         <div className="proj-txtx">
           <h4>{title}</h4>

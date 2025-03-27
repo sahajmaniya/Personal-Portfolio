@@ -568,8 +568,8 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   border-radius: 0 55px 55px 0;
 }
 
-.proj-imgbx img {
-  object-fit: contain;
+.project-img {
+  height: 270px;
 }
 
 .proj-imgbx {
