@@ -25,7 +25,7 @@ const experiences = [
         companyImage: companayimg3  ,
         role: "Frontend Developer",
         companyName: "Nanditech Solutions",
-        jobDuration:"Jan 2025 - Present",   
+        jobDuration:"Jan 2025 - June 2025",   
     },
 
 ];

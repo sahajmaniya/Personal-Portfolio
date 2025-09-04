@@ -2,7 +2,6 @@
 import calanderimg from "../assets/img/calander.png";
 
 
-import * as React from "react";
 
 const ExperienceCard = ({ companyImage, role, companyName,jobDuration }) => {
     return (
