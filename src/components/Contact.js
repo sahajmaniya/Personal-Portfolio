@@ -14,58 +14,76 @@ export const Contact = () => {
     phone: '',
     message: ''
   };
+
   const [formDetails, setFormDetails] = useState(formInitialDetails);
   const [buttonText, setButtonText] = useState('Send');
+  const [submitting, setSubmitting] = useState(false);
 
   const onFormUpdate = (category, value) => {
-    setFormDetails({
-      ...formDetails,
+    setFormDetails((prev) => ({
+      ...prev,
       [category]: value
-    });
+    }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Basic client-side guardrails (optional)
+    if (!formDetails.firstName || !formDetails.email || !formDetails.message) {
+      toast.error('Please fill in First Name, Email, and Message.', { position: 'top-center' });
+      return;
+    }
+
+    setSubmitting(true);
     setButtonText('Sending...');
+
+    const payload = {
+      name: `${formDetails.firstName} ${formDetails.lastName}`.trim(),
+      email: formDetails.email,
+      message: formDetails.message,
+      phone: formDetails.phone
+    };
+
     try {
-      let response = await fetch('http://localhost:5000/contact', {
+      const res = await fetch('/api/contact', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json;charset=utf-8'
-        },
-        body: JSON.stringify(formDetails)
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
       });
-      
-      const result = await response.text(); // Get raw response as text
-      console.log('Raw response:', result);
-      
-      let jsonResult;
+
+      // Try to parse JSON; if it fails, fall back to text
+      let data;
       try {
-        jsonResult = JSON.parse(result); // Attempt to parse JSON
-      } catch (error) {
-        console.error('Error parsing JSON:', error);
-        throw new Error('Invalid JSON response');
+        data = await res.json();
+      } catch {
+        const txt = await res.text();
+        data = { error: txt || 'Unexpected response from server' };
       }
 
-      if (jsonResult.code === 200) {
-        toast.success('Message sent successfully', {
-          position: "top-center",
-          style: { maxWidth: "300px" }
+      if (res.ok && (data?.ok || !data?.error)) {
+        toast.success('Message sent successfully!', {
+          position: 'top-center',
+          style: { maxWidth: '300px' }
         });
+
+        // If you enabled Ethereal in your local Function, you might get a previewUrl
+        if (data.previewUrl) {
+          console.log('Ethereal preview URL:', data.previewUrl);
+        }
+
+        // Reset form
+        setFormDetails(formInitialDetails);
       } else {
-        toast.error('Something went wrong, please try again later.', {
-          position: "top-center",
-          style: {}
-        });
+        const reason = data?.error || 'Something went wrong, please try again later.';
+        toast.error(reason, { position: 'top-center' });
       }
-    } catch (error) {
-      console.error('Error:', error);
-      toast.error('Something went wrong, please try again later.', {
-        position: "top-center"
-      });
+    } catch (err) {
+      console.error('Submit error:', err);
+      toast.error('Network error. Please try again later.', { position: 'top-center' });
     } finally {
+      setSubmitting(false);
       setButtonText('Send');
-      setFormDetails(formInitialDetails);
     }
   };
 
@@ -84,11 +102,13 @@ export const Contact = () => {
               )}
             </TrackVisibility>
           </Col>
+
           <Col size={12} md={6}>
             <TrackVisibility>
               {({ isVisible }) => (
                 <div className={isVisible ? 'animate__animated animate__fadeIn' : ''}>
                   <h2>Get In Touch</h2>
+
                   <form onSubmit={handleSubmit}>
                     <Row>
                       <Col size={12} sm={6} className='px-1'>
@@ -97,8 +117,10 @@ export const Contact = () => {
                           value={formDetails.firstName}
                           placeholder='First Name'
                           onChange={(e) => onFormUpdate('firstName', e.target.value)}
+                          required
                         />
                       </Col>
+
                       <Col size={12} sm={6} className='px-1'>
                         <input
                           type='text'
@@ -107,31 +129,37 @@ export const Contact = () => {
                           onChange={(e) => onFormUpdate('lastName', e.target.value)}
                         />
                       </Col>
+
                       <Col size={12} sm={6} className='px-1'>
                         <input
                           type='email'
                           value={formDetails.email}
                           placeholder='Email Address'
                           onChange={(e) => onFormUpdate('email', e.target.value)}
+                          required
                         />
                       </Col>
+
                       <Col size={12} sm={6} className='px-1'>
                         <input
                           type='tel'
                           value={formDetails.phone}
                           placeholder='Phone No.'
-                          maxLength="10"
+                          maxLength='10'
                           onChange={(e) => onFormUpdate('phone', e.target.value)}
                         />
                       </Col>
+
                       <Col size={12} className='px-1'>
                         <textarea
                           rows='6'
                           value={formDetails.message}
                           placeholder='Message'
                           onChange={(e) => onFormUpdate('message', e.target.value)}
+                          required
                         ></textarea>
-                        <button type='submit'>
+
+                        <button type='submit' disabled={submitting}>
                           <span>{buttonText}</span>
                         </button>
                       </Col>
@@ -142,6 +170,7 @@ export const Contact = () => {
             </TrackVisibility>
           </Col>
         </Row>
+
         <ToastContainer />
       </Container>
     </section>
