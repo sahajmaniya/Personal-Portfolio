@@ -21,46 +21,91 @@ export const NavBar = () => {
       } else {
         setScrolled(false);
       }
-    }
+
+      // highlight active section while scrolling
+      const sections = ['home', 'skills', 'projects', 'education', 'connect'];
+      for (const id of sections) {
+        const section = document.getElementById(id);
+        if (section) {
+          const rect = section.getBoundingClientRect();
+          if (rect.top <= 150 && rect.bottom >= 150) {
+            setActiveLink(id);
+            break;
+          }
+        }
+      }
+    };
 
     window.addEventListener("scroll", onScroll);
-
     return () => window.removeEventListener("scroll", onScroll);
-  }, [])
+  }, []);
 
   const onUpdateActiveLink = (value) => {
     setActiveLink(value);
-  }
+  };
 
   return (
     <Router>
-        <Navbar expand="md" className={scrolled ? "scrolled" : ""}>
-          <Container className="Navbar">
-            <Navbar.Brand className="logo-img" href="/">
-              <img  src={logo} alt="Logo" />
-            </Navbar.Brand>
-            <Navbar.Toggle aria-controls="basic-navbar-nav">
-              <span className="navbar-toggler-icon"></span>
-            </Navbar.Toggle>
-            <Navbar.Collapse id="basic-navbar-nav">
-              <Nav className="ms-auto">
-                <Nav.Link href="#home" className={activeLink === 'home' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('home')}>Home</Nav.Link>
-                <Nav.Link href="#skills" className={activeLink === 'skills' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('skills')}>Skills</Nav.Link>
-                <Nav.Link href="#projects" className={activeLink === 'projects' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('projects')}>Projects</Nav.Link>
-              </Nav>
-              <span className="navbar-text">
-                <div className="social-icon">
-                  <a target="_blank" href="https://www.linkedin.com/in/sahajmaniya/"><img src={navIcon1} alt="" /></a>
-                  <a target="_blank" href="https://www.behance.net/sahajmaniya1"><img src={navIcon2} alt="" /></a>
-                  <a target="_blank" href="https://github.com/sahajmaniya"><img src={navIcon3} alt="" /></a>
-                </div>
-                <HashLink to='#connect'>
-                  <button className="vvd"><span>Let’s Connect</span></button>
-                </HashLink>
-              </span>
-            </Navbar.Collapse>
-          </Container>
-        </Navbar>
+      <Navbar expand="md" className={scrolled ? "scrolled" : ""}>
+        <Container className="Navbar">
+          <Navbar.Brand className="logo-img" href="/">
+            <img src={logo} alt="Logo" />
+          </Navbar.Brand>
+
+          <Navbar.Toggle aria-controls="basic-navbar-nav">
+            <span className="navbar-toggler-icon"></span>
+          </Navbar.Toggle>
+
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="ms-auto">
+              <Nav.Link
+                href="#home"
+                className={activeLink === 'home' ? 'active navbar-link' : 'navbar-link'}
+                onClick={() => onUpdateActiveLink('home')}
+              >
+                Home
+              </Nav.Link>
+
+              <Nav.Link
+                href="#skills"
+                className={activeLink === 'skills' ? 'active navbar-link' : 'navbar-link'}
+                onClick={() => onUpdateActiveLink('skills')}
+              >
+                Skills
+              </Nav.Link>
+
+              <Nav.Link
+                href="#projects"
+                className={activeLink === 'projects' ? 'active navbar-link' : 'navbar-link'}
+                onClick={() => onUpdateActiveLink('projects')}
+              >
+                Projects
+              </Nav.Link>
+
+              {/* 👇 New Education link */}
+              <Nav.Link
+                href="#education"
+                className={activeLink === 'education' ? 'active navbar-link' : 'navbar-link'}
+                onClick={() => onUpdateActiveLink('education')}
+              >
+                Education
+              </Nav.Link>
+            </Nav>
+
+            <span className="navbar-text">
+              <div className="social-icon">
+                <a target="_blank" href="https://www.linkedin.com/in/sahajmaniya/"><img src={navIcon1} alt="LinkedIn" /></a>
+                <a target="_blank" href="https://www.behance.net/sahajmaniya1"><img src={navIcon2} alt="Behance" /></a>
+                <a target="_blank" href="https://github.com/sahajmaniya"><img src={navIcon3} alt="GitHub" /></a>
+              </div>
+
+              <HashLink to="#connect">
+                <button className="vvd"><span>Let’s Connect</span></button>
+              </HashLink>
+            </span>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
     </Router>
-  )
-}
+  );
+};

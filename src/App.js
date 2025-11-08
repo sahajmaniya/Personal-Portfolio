@@ -7,6 +7,7 @@ import { Projects } from "./components/Projects";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 import HackathonSection from './components/HackathonSection';
+import Education from './components/education';
 import { SpeedInsights } from "@vercel/speed-insights/react"
 import { HelmetProvider } from "react-helmet-async";
 import SEO from './components/SEO';
@@ -23,6 +24,7 @@ function App() {
       <Skills />
       <Projects />
       <HackathonSection/>
+      <Education/>
       <Contact/>
       <Footer/>
       <SpeedInsights/>  
