@@ -94,13 +94,13 @@ export const NavBar = () => {
 
             <span className="navbar-text">
               <div className="social-icon">
-                <a target="_blank" href="https://www.linkedin.com/in/sahajmaniya/"><img src={navIcon1} alt="LinkedIn" /></a>
-                <a target="_blank" href="https://www.behance.net/sahajmaniya1"><img src={navIcon2} alt="Behance" /></a>
-                <a target="_blank" href="https://github.com/sahajmaniya"><img src={navIcon3} alt="GitHub" /></a>
+                <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/sahajmaniya/"><img src={navIcon1} alt="LinkedIn" /></a>
+                <a target="_blank" rel="noreferrer" href="https://www.behance.net/sahajmaniya1"><img src={navIcon2} alt="Behance" /></a>
+                <a target="_blank" rel="noreferrer" href="https://github.com/sahajmaniya"><img src={navIcon3} alt="GitHub" /></a>
               </div>
 
               <HashLink to="#connect">
-                <button className="vvd"><span>Let’s Connect</span></button>
+                <button className="vvd"><span>Let's Connect</span></button>
               </HashLink>
             </span>
           </Navbar.Collapse>
